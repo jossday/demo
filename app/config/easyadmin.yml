@@ -1,0 +1,29 @@
+easy_admin:
+    entities:
+        Project:
+            class: AppBundle\Entity\News
+            label: 'Actualités'
+            list:
+                actions: ['show', 'edit', 'delete']
+                title: 'Liste des actualités'
+                fields:
+                  - id
+                  - {property: 'title', label: 'Titre'}
+                  - {property: 'description', label: 'Description'}
+            show:
+                title: %%entity_label%%
+                fields:
+                  - id
+                  - {property: 'title', label: 'Titre'}
+                  - {property: 'description', label: 'Description'}
+            form:
+                fields:
+                  - {property: 'title', label: 'Titre'}
+                  - {property: 'description', label: 'Description', type_options: { required: false }}
+                  # - {property: 'images', label: 'Illustrations', type: 'collection', type_options: { entry_type: 'AppBundle\Form\ImageType', by_reference: false }}
+
+    site_name: 'Demo'
+    design:
+      color_scheme: 'light'
+      assets:
+        favicon: '/assets/images/favicon.png'
