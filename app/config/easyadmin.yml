@@ -20,7 +20,7 @@ easy_admin:
                 fields:
                   - {property: 'title', label: 'Titre'}
                   - {property: 'description', label: 'Description', type_options: { required: false }}
-                  # - {property: 'images', label: 'Illustrations', type: 'collection', type_options: { entry_type: 'AppBundle\Form\ImageType', by_reference: false }}
+                  - {property: 'images', label: 'Illustrations', type: 'collection', type_options: { entry_type: 'AppBundle\Form\ImageType', by_reference: false }}
 
     site_name: 'Demo'
     design:

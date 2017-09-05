@@ -3,11 +3,12 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: easyadmin.yml }
-    
+
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    app.path.news_images: /uploads/images/news
 
 framework:
     #esi: ~
@@ -76,3 +77,10 @@ fos_user:
     from_email:
         address: "test@test.com"
         sender_name: "test"
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        news_images:
+            uri_prefix:         '%app.path.news_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/news'
